@@ -1,0 +1,83 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+void miniCalculadora();/* Escribe un programa que lea de la entrada estandar dos numeros y muestre en la salida estandar
+ su suma, resta, multiplicacion y division. */
+
+void agregarIVA(); /* Escribre un programa que lea de la entrada estandar el precio de un producto y muestre en la salida estandar el 
+precio del producto al aplicarle el IVA.*/
+
+void opciones();
+
+int main (){
+	int opcion = 0;
+	
+	cout << "bienvenido a las pruebas de c++ ingrese el numero segun el programa pedido." << endl;
+	
+	opciones(); 
+
+	
+	return 0;
+}
+
+void miniCalculadora(){
+	
+	int n1 = 0, n2 = 0, suma = 0, resta = 0, multi = 0, division = 0;
+	
+	
+	cout <<"\n Ingrese un numero " << endl;
+	
+	cin >> n1;
+	
+	cout << " Ingrese otro numero " << endl;
+	
+	cin >> n2;
+	suma = n1 + n2;
+	resta = n1 - n2;
+	multi = n1 * n2;
+	division = n1 / n2;
+	
+	cout << "La resta es " << resta << endl << "La suma es " << suma << endl << "La multiplicacion es " << multi << endl << "La division es " << division << endl; 
+
+}
+
+void opciones(){
+	int opcion = 0;
+	
+	cout << "\n Los programas disponibles son " << endl;
+	cout << " 1. Mini calculadora" << endl << "2. Agregar Iva" << endl << "9. Volver al menu" << endl << "0. Terminar" << endl;
+	cin >> opcion;
+	
+	while (opcion != 0){
+		if (opcion == 1){
+			miniCalculadora();
+		} else { if (opcion = 2){
+			agregarIVA();
+			} else { if (opcion = 9){
+				opciones();
+			}
+			}
+		}
+	cout << " 1. Mini calculadora" << endl << "2. Agregar Iva" << endl << "9. Volver al menu" << endl << "0. Terminar" << endl;
+	cin >> opcion;	
+		
+	}
+		
+}
+
+void agregarIVA(){
+	
+	string nombre= " ";
+	float producto = 0.0;
+	float productoIVA = 0.0;
+	
+	cout << "Ingrese el nombre del producto: " << endl; 
+	getline(cin, nombre); 
+	cout << "Ingrese el precio del producto: "<<endl;
+	cin >> producto;
+	productoIVA = (producto * 21 /100) + producto;
+	cout << "El valor del producto " << nombre << " es : $" << producto << " y el valor con IVA es : $" << productoIVA << endl;
+		
+}
